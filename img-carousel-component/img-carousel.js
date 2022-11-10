@@ -1,7 +1,3 @@
-//TODO: Meter atributo de "botones = true/false" para mostrar botones debajo del carrusel con los que se pueda deslizar entre imágenes.
-//TODO: Hacer una función que deslice las imágenes en un intervalo de tiempo (podría ser un atributo el tiempo)
-//TODO: Hacer un atributo para cambiar el aspect-ratio del web component  → listo
-
 class ImgCarousel extends HTMLElement {
   constructor() {
     super();
@@ -17,8 +13,8 @@ class ImgCarousel extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     switch (name) {
-      case "jumpInterval":
-        
+      case "jump":
+        console.log("pepe")
         this.jumpInterval = newValue * 1000;
         break;
 
@@ -44,7 +40,7 @@ class ImgCarousel extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ["ratio", "jumpInterval", "motion"];
+    return ["ratio", "jump", "motion"];
   }
 
   connectedCallback() {
@@ -90,7 +86,7 @@ class ImgCarousel extends HTMLElement {
   }
 
   moveNext() {
-    
+
     if (this.currentImage === this.maxImage) {
       this.currentImage = 0;
     } else {
