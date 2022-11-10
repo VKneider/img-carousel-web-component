@@ -18,7 +18,7 @@ class ImgCarousel extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     switch (name) {
       case "jumpInterval":
-        console.log(newValue);
+        
         this.jumpInterval = newValue * 1000;
         break;
 
@@ -90,7 +90,7 @@ class ImgCarousel extends HTMLElement {
   }
 
   moveNext() {
-    console.log("1");
+    
     if (this.currentImage === this.maxImage) {
       this.currentImage = 0;
     } else {
