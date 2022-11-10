@@ -18,16 +18,29 @@
 		</template>
 		<link rel="stylesheet" href="style.css" />
 	</head>
+
 	<body>
-		<h1>Un pequeño paseo por la naturaleza</h1>
 		<div class="container">
 			<div>
 				<h2>Montañas</h2>
-				<img-carousel id="mountains-crsl"></img-carousel>
+				<img-carousel
+					id="mountains-crsl"
+					jump="2"
+					motion="fw"
+				></img-carousel>
 			</div>
 			<div>
 				<h2>Playas</h2>
-				<img-carousel id="beaches-crsl"></img-carousel>
+				<img-carousel id="beaches-crsl" ratio="16/10"></img-carousel>
+			</div>
+			<div>
+				<h2>Volcanes</h2>
+				<img-carousel
+					id="volcanes-crsl"
+					jump="4"
+					ratio="1/1"
+					motion="bw"
+				></img-carousel>
 			</div>
 		</div>
 		<script src="img-carousel-component/img-carousel.js"></script>
