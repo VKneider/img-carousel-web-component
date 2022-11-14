@@ -24,4 +24,4 @@ volcanesCrsl.images = ["https://images.unsplash.com/photo-1619266465172-02a857c3
 ];
 
 
-
+volcanesCrsl.changeStyles({ border: "2px solid #49a078", "box-shadow": "0 5px 30px #216869B9" });
