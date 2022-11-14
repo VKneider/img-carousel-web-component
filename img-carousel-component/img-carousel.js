@@ -12,6 +12,7 @@ class ImgCarousel extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
+    let slider = this.shadow.querySelector(".slider");
     switch (name) {
       case "jump":
         console.log("pepe")
@@ -19,7 +20,6 @@ class ImgCarousel extends HTMLElement {
         break;
 
       case "ratio":
-        let slider = this.shadow.querySelector(".slider");
         slider.style.aspectRatio = newValue;
         break;
 
@@ -34,13 +34,16 @@ class ImgCarousel extends HTMLElement {
             this.autoMovePrev();
             break;
         }
+        break;
 
+      case "height":
+        slider.style.height = newValue;
         break;
     }
   }
 
   static get observedAttributes() {
-    return ["ratio", "jump", "motion"];
+    return ["ratio", "jump", "motion", "height"];
   }
 
   connectedCallback() {
@@ -65,6 +68,13 @@ class ImgCarousel extends HTMLElement {
     this.shadow = this.attachShadow({ mode: "open" });
     const template = document.getElementById("img-carousel-template");
     this.shadow.appendChild(template.content.cloneNode(true));
+  }
+
+  changeStyles(styles) {
+    let slider = this.shadow.querySelector(".slider");
+    Object.keys(styles).forEach(property => {
+      slider.style[property] = styles[property];
+    })
   }
 
   autoMovePrev() {
