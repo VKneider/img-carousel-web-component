@@ -18,18 +18,45 @@
 		</template>
 		<link rel="stylesheet" href="style.css" />
 	</head>
+
 	<body>
-		<h1>Un pequeño paseo por la naturaleza</h1>
-		<div class="container">
+		<section class="first-container">
 			<div>
-				<h2>Montañas</h2>
-				<img-carousel id="mountains-crsl"></img-carousel>
+				<h1>Un paseo por la <span>naturaleza</span></h1>
+				<p>
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+					Doloremque error accusantium quos praesentium exercitationem
+					eaque consequatur sunt nostrum in nemo.
+				</p>
+				<span class="line"></span>
 			</div>
-			<div>
-				<h2>Playas</h2>
-				<img-carousel id="beaches-crsl"></img-carousel>
+		</section>
+		<section class="second-container">
+			<div class="inner-container">
+				<div class="push">
+					<h2>Montañas</h2>
+					<img-carousel
+						id="mountains-crsl"
+						jump="2"
+						motion="fw"
+					></img-carousel>
+				</div>
+				<div>
+					<h2>Playas</h2>
+					<img-carousel id="beaches-crsl"></img-carousel>
+				</div>
 			</div>
-		</div>
+			<div class="inner-container">
+				<h2>Volcanes</h2>
+				<img-carousel
+					id="volcanes-crsl"
+					jump="4"
+					ratio="9/16"
+					motion="bw"
+					height="650px"
+				></img-carousel>
+			</div>
+		</section>
 		<script src="img-carousel-component/img-carousel.js"></script>
 		<script src="main.js"></script>
 	</body>
